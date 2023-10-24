@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, srink-to-fit=no">
+    <title>Tableau</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link class="mobile" rel="stylesheet" media="screen and (max-width:767px)" href="mobile.css">
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="tablette.css">
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="desktop.css">
+</head>
+
+<body>
+    <header>
+        <img class="jardin" src="assets/img/jarditou_logo.jpg" alt="jarditou_logo">
+        <p class="titre">Tout le jardin</p>
+    </header>
+    <nav class="navig">
+        <a class="block" href="index.html" title="Acceuil">Acceuil</a>
+        <a class="block" href="tableau.html" title="Tableau">Tableau</a>
+        <a class="block" href="formulaire.html" title="Contact">Contact</a>
+    </nav>
+    <img src="assets/img/promotion.jpg" alt="promotion.jarditou"><br>
+<div class="form">
+    <table class="tableau-style">
+        <h1>Tableau</h1>
+        <button id="t" ></button>
+        <div id="tableau" ></div>
+        <section>
+         
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>ID</th>
+                    <th>Catégorie</th>
+                    <th>Libellé</th>
+                    <th>Prix</th>
+                    <th>Couleur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="achat" src="assets/img/7.jpg" alt="Barbecue.aramis"></td>
+                    <td>7</td>
+                    <td>Barbecues</td>
+                    <td>Aramis</td>
+                    <td>110.00€</td>
+                    <td>brun</td>
+                </tr>
+                <tr>
+                    <td><img class="achat" src="assets/img/8.jpg" alt="barbecue.athos"></td>
+                    <td>8</td>
+                    <td>Barbecues</td>
+                    <td>Athos</td>
+                    <td>249.99€</td>
+                    <td>Noir</td>
+                </tr>
+                <tr>
+                    <td><img class="achat" src="assets/img/11.jpg" alt="Barbecue.claronic"></td>
+                    <td>11</td>
+                    <td>Barbecues</td>
+                    <td>Claronic</td>
+                    <td>135.90€</td>
+                    <td>Chrome</td>
+                </tr>
+                <tr>
+                    <td><img class="achat" src="assets/img/12.jpg" alt="Barbecue.de.camping"></td>
+                    <td>12</td>
+                    <td>Barbecues</td>
+                    <td>Camping</td>
+                    <td>88.00€</td>
+                    <td>Noir</td>
+                </tr>
+                <tr>
+                    <td><img class="achat" src="assets/img/13.jpg" alt="Brouette"></td>
+                    <td>13</td>
+                    <td>Brouette</td>
+                    <td>Green</td>
+                    <td>49.00€</td>
+                    <td>Verte</td>
+                </tr>
+            </tbody>
+        </section>
+    </table>
+    
+    <aside class="box" id="un">[COLONNE DROITE]</aside>
+</div>
+    <footer class="navig">
+        <a class="block" href="index.html" title="Acceuil">Acceuil</a>
+        <a class="block" href="tableau.html" title="Tableau">Tableau</a>
+        <a class="block" href="formulaire.html" title="Contact">Contact</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#div1").click(function(){
+                tabl();
+            });
+function tabl(){
+    var boite=$("#tableau").val();
+    var 
+    tableau.append("")
+}
+        });
+            </script>
+</body>
+
+</html>
