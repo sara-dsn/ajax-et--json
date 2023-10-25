@@ -10,72 +10,50 @@
 <body>
     
 <select id="select1">
-    <option value="1">Région 1</option>
-    <option value="2">Région 2</option>
-    <option value="3">Région 3</option>
-    <option value="4">Région 4</option>
-    <option value="5">Région 5</option>
-    <option value="6">Région 6</option>
-    <option value="7">Région 7</option>
-    <option value="8">Région 8</option>
-    <option value="9">Région 9</option>
-    <option value="10">Région 10</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+   
+
 </select>
 <select id="select2" >
-    <option value="departement">0</option>
+    <option value="11">département</option>
 </select>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
-           
+        
     $("#select1").change(function(){
        
        f_choix();
    });
 
-   function f_choix(){
+  function f_choix(){
 
+    var reg=$("#select1").val();
+var lien="ajax_regions.json";
+var afficher=$("#select2");
+afficher.empty();
 
-    var region=$("select#select1").val();
+if (reg>=1 && reg<=6){
 
-    if(region==="1"){
-  $("#select2 option[value='departement']").text("Ain");
-    }
-  else if (region==="2"){
-    $("#select2 option[value='departement']").text("Aisne"); 
-  }
-  else if (region==="3"){
-    $("#select2 option[value='departement']").text("Allier"); 
-  }
-  else if (region==="4"){
-    $("#select2 option[value='departement']").text("Alpes-de-Haute-Provence"); 
-  }
-  else if (region==="5"){
-    $("#select2 option[value='departement']").text("Hautes-Alpes"); 
-  }
-  else if (region==="6"){
-    $("#select2 option[value='departement']").text("Alpes-Maritimes"); 
-  }
-  else if (region==="7"){
-    $("#select2 option[value='departement']").text("Ardèche"); 
-  }
-  else if (region==="8"){
-    $("#select2 option[value='departement']").text("Ardennes"); 
-  }
-  else if (region==="9"){
-    $("#select2 option[value='departement']").text("Ariège"); 
-  }
-  else if (region==="10"){
-    $("#select2 option[value='departement']").text("Aude"); 
-  }
+  $.get(lien, function(data){
+$.each(data.departements, function(index, departement){
+afficher.append(`<option value="${departement.dep_id}">${departement.dep_nom}</option>`);
+});
+});
 
-   }
-    });
+  };
+    };
+  });
 </script>
 </body>
 </html>
