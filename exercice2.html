@@ -31,53 +31,37 @@
     crossorigin="anonymous"></script>
   <script>
     $(document).ready(function () {
-
+var select2 = $("#select2").val();
+var select1 = $("#select1").val();
       $("#select1").change(function () {
-
         f_choix();
       });
       $("#select2").change(function () {
-        f_autre();});
+        f_autre();
+      });
+
         function f_choix() {
-
-var select1 = $("#select1").val();
+select2.empty();
 var lien = "ajax_regions.json";
-
-
-select1.empty();
 $.getJSON(lien, function (data) {
-  var boite = data.results;
-
-  console.log(data.results);
-  for (var i = 0; i < boite.length; i++) {
-    var item=boite[i];
+  console.log(data);
+  for (var i = 0; i < data.length; i++) {
+    var item=data[i];
     var sel1=` <option value="${item.reg_v_nom} ">${item.reg_v_nom} </option>`;
-    
-select1.append(sel1);
-
+select2.append(sel1);
   };
-
 });
-
-
 };
       function f_autre() {
 
-        
-        var select2 = $("#select2").val();
         var lien = "ajax_regions.json";
-
-      
-
         $.getJSON(lien, function (data) {
-          var boite = data.results;
-          for (var i = 0; i < boite.length; i++) {
-            select2.empty();
+          
+          for (var i = 0; i < data.length; i++) {
+            select1.empty();
             var item=data[i];
-           
             var sel2=`    <option value="${item.dep_nom} ">${item.dep_nom} </option>`;
-
-select2.append(sel2);
+select1.append(sel2);
           };
 
         });
