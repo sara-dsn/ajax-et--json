@@ -22,70 +22,14 @@
         <a class="block" href="formulaire.html" title="Contact">Contact</a>
     </nav>
     <img src="assets/img/promotion.jpg" alt="promotion.jarditou"><br>
-<div class="form">
-    <table class="tableau-style">
-        <h1>Tableau</h1>
-        <button id="t" ></button>
+
+   
+        <button id="t" >voir tableau</button>
         <div id="tableau" ></div>
-        <section>
-         
-            <thead>
-                <tr>
-                    <th>Photo</th>
-                    <th>ID</th>
-                    <th>Catégorie</th>
-                    <th>Libellé</th>
-                    <th>Prix</th>
-                    <th>Couleur</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img class="achat" src="assets/img/7.jpg" alt="Barbecue.aramis"></td>
-                    <td>7</td>
-                    <td>Barbecues</td>
-                    <td>Aramis</td>
-                    <td>110.00€</td>
-                    <td>brun</td>
-                </tr>
-                <tr>
-                    <td><img class="achat" src="assets/img/8.jpg" alt="barbecue.athos"></td>
-                    <td>8</td>
-                    <td>Barbecues</td>
-                    <td>Athos</td>
-                    <td>249.99€</td>
-                    <td>Noir</td>
-                </tr>
-                <tr>
-                    <td><img class="achat" src="assets/img/11.jpg" alt="Barbecue.claronic"></td>
-                    <td>11</td>
-                    <td>Barbecues</td>
-                    <td>Claronic</td>
-                    <td>135.90€</td>
-                    <td>Chrome</td>
-                </tr>
-                <tr>
-                    <td><img class="achat" src="assets/img/12.jpg" alt="Barbecue.de.camping"></td>
-                    <td>12</td>
-                    <td>Barbecues</td>
-                    <td>Camping</td>
-                    <td>88.00€</td>
-                    <td>Noir</td>
-                </tr>
-                <tr>
-                    <td><img class="achat" src="assets/img/13.jpg" alt="Brouette"></td>
-                    <td>13</td>
-                    <td>Brouette</td>
-                    <td>Green</td>
-                    <td>49.00€</td>
-                    <td>Verte</td>
-                </tr>
-            </tbody>
-        </section>
-    </table>
+        
     
     <aside class="box" id="un">[COLONNE DROITE]</aside>
-</div>
+
     <footer class="navig">
         <a class="block" href="index.html" title="Acceuil">Acceuil</a>
         <a class="block" href="tableau.html" title="Tableau">Tableau</a>
@@ -98,9 +42,67 @@
                 tabl();
             });
 function tabl(){
+   
     var boite=$("#tableau").val();
-    var 
-    tableau.append("")
+    boite.empty();
+    var t = ` <table class="tableau-style">
+    <section>
+         
+         <thead>
+             <tr>
+                 <th>Photo</th>
+                 <th>ID</th>
+                 <th>Catégorie</th>
+                 <th>Libellé</th>
+                 <th>Prix</th>
+                 <th>Couleur</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <td><img class="achat" src="assets/img/7.jpg" alt="Barbecue.aramis"></td>
+                 <td>7</td>
+                 <td>Barbecues</td>
+                 <td>Aramis</td>
+                 <td>110.00€</td>
+                 <td>brun</td>
+             </tr>
+             <tr>
+                 <td><img class="achat" src="assets/img/8.jpg" alt="barbecue.athos"></td>
+                 <td>8</td>
+                 <td>Barbecues</td>
+                 <td>Athos</td>
+                 <td>249.99€</td>
+                 <td>Noir</td>
+             </tr>
+             <tr>
+                 <td><img class="achat" src="assets/img/11.jpg" alt="Barbecue.claronic"></td>
+                 <td>11</td>
+                 <td>Barbecues</td>
+                 <td>Claronic</td>
+                 <td>135.90€</td>
+                 <td>Chrome</td>
+             </tr>
+             <tr>
+                 <td><img class="achat" src="assets/img/12.jpg" alt="Barbecue.de.camping"></td>
+                 <td>12</td>
+                 <td>Barbecues</td>
+                 <td>Camping</td>
+                 <td>88.00€</td>
+                 <td>Noir</td>
+             </tr>
+             <tr>
+                 <td><img class="achat" src="assets/img/13.jpg" alt="Brouette"></td>
+                 <td>13</td>
+                 <td>Brouette</td>
+                 <td>Green</td>
+                 <td>49.00€</td>
+                 <td>Verte</td>
+             </tr>
+         </tbody>
+     </section>
+ </table>`;
+    boite.append(t);
 }
         });
             </script>
