@@ -31,27 +31,13 @@
     crossorigin="anonymous"></script>
   <script>
     $(document).ready(function () {
-var select2 = $("#select2").val();
-var select1 = $("#select1").val();
-      $("#select1").change(function () {
-        f_choix();
-      });
+
+    
       $("#select2").change(function () {
         f_autre();
       });
+      
 
-        function f_choix() {
-select2.empty();
-var lien = "ajax_regions.json";
-$.getJSON(lien, function (data) {
-  console.log(data);
-  for (var i = 0; i < data.length; i++) {
-    var item=data[i];
-    var sel1=` <option value="${item.reg_v_nom} ">${item.reg_v_nom} </option>`;
-select2.append(sel1);
-  };
-});
-};
       function f_autre() {
 
         var lien = "ajax_regions.json";

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="select2">
+        <option value="regions">régions</option>
+    </select>
+
+    <select id="select1">
+        <option value="départements">départements</option>
+    </select>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        
+        $(document).ready(function () {
+   
+    $.getJSON("ajax_regions.json", function (data) {
+        console.log(data.regions);
+        var select1 = $("#select1"); 
+        var select2 = $("#select2"); 
+  var regions=data.regions;
+  var departements=data.departements;
+    $("#select2").click(function () {
+        
+        f_click();
+    });
+    console.log(regions);
+    select2.empty();
+    function f_click() {
+        var select2 = $("#select2");  
+       
+        for (var i = 0; i < regions.length; i++) {
+            var item = regions[i];
+            var sel1 = `<option value="${item.reg_v_nom}">${item.reg_v_nom}</option>`;
+            select2.append(sel1);  
+        }
+    }
+    select1.empty();
+    $("#select2").change(function () {
+       
+        f_reg();
+    });
+    function f_reg(){
+        
+        var select1 = $("#select1");  
+        for (var i = 0; i < departements.length; i++) {
+            var item2 = departements[i];
+            var sel2 = `<option value="${item2.dep_nom}">${item2.dep_nom}</option>`;
+            select1.append(sel2);  
+        }
+    }
+   
+});
+
+});
+
+    </script>
+</body>
+
+</html>
