@@ -31,30 +31,56 @@
     crossorigin="anonymous"></script>
   <script>
     $(document).ready(function () {
+      f_autre();
 
-    
-      $("#select2").change(function () {
-        f_autre();
-      });
-      
 
       function f_autre() {
-
         var lien = "ajax_regions.json";
         $.getJSON(lien, function (data) {
-          
-          for (var i = 0; i < data.length; i++) {
-            select1.empty();
-            var item=data[i];
-            var sel2=`    <option value="${item.dep_nom} ">${item.dep_nom} </option>`;
-select1.append(sel2);
-          };
+          // console.log(data);
+          var liste = $("#select1");
+          liste.empty();
+          $.each(data.regions, function (element, region) {
 
+            var sel2 = `    <option value=" ${region.reg_id}">${region.reg_v_nom} </option>`;
+            liste.append(sel2);
+
+
+          });
+        });
+
+      };
+     
+        $("#select1").change(function () {
+         
+          f_change();
+        });
+        function f_change() {
+          var id2 = $("#select1").val();
+          console.log(id2)
+          var lien = "ajax_regions.json";
+          $.getJSON(lien, function (data) {
+         
+          var liste2 = $("#select2");
+          liste2.empty();
+
+          var trier=data.departements.filter(function(dep){
+            return dep.dep_reg_id==id2;
+          
+          });
+          console.log(trier)
+          $.each(trier, function (element, departement) {
+
+            var sel1 = `    <option value="${departement.dep_reg_id} ">${departement.dep_nom} </option>`;
+           
+              liste2.append(sel1);
+          });
         });
 
 
-      };
 
+        };
+      
     });
   </script>
 </body>
